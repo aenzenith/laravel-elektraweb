@@ -1,0 +1,163 @@
+{
+    "roomtype": [
+        {
+            "room-id": 401040,
+            "room-group-id": null,
+            "room-name": "Suit",
+            "room-code": "SU",
+            "room-property": "Klima, Emanet kasası, Çalışma masası, Gardırop/Dolap, Kıyafet askılığı, Ahşap/Parke zemin, Tavandan tabana pencereler, Karartma perdeler, Kuran, Seccade, Kıble pusulası, Duş, Saç kurutma makinesi, Terlik, Ücretsiz banyo malzemeleri, Taharet musluğu, Wi-Fi, Düz ekran TV, Uydu kanalları, Telefon, Minibar, Çay/Kahve seti, Elektrikli su ısıtıcı, Dış mekan mobilyaları, Havlular",
+            "room-image-url": "https://erspublic.blob.core.windows.net/test/17e91d39-24ce-467-86fd-c7803ab6a000.jpg",
+            "room-bed-options": "Çift Kişilik Yatak + Kanepe",
+            "room-area": 75,
+            "room-level": 2,
+            "room-rules": {
+                "max-adult-capacity": 5,
+                "max-child-capacity": 3,
+                "min-child-capacity": null,
+                "max-baby-capacity": 2,
+                "max-pax-capacity": 5
+            },
+            "room-has-wifi": true,
+            "room-has-safe": true,
+            "room-has-private-bath": true,
+            "room-has-hairdryer": true,
+            "room-has-balcony": true
+        },
+        {
+            "room-id": 411520,
+            "room-group-id": null,
+            "room-name": "Ekonomik",
+            "room-code": "ECO",
+            "room-property": null,
+            "room-image-url": "https://files.cdn.elektraweb.com/bdcac343/18c57744-6fa1-60-8c19-80044405f000.jpeg",
+            "room-bed-options": null,
+            "room-area": null,
+            "room-level": 4,
+            "room-rules": {
+                "max-adult-capacity": 3,
+                "max-child-capacity": null,
+                "min-child-capacity": null,
+                "max-baby-capacity": null,
+                "max-pax-capacity": 3
+            },
+            "room-has-wifi": false,
+            "room-has-safe": false,
+            "room-has-private-bath": false,
+            "room-has-hairdryer": false,
+            "room-has-balcony": false
+        },
+        {
+            "room-id": 415228,
+            "room-group-id": null,
+            "room-name": "B Suites",
+            "room-code": "CC",
+            "room-property": "<ul>\n\t<li>Kara Manzaralı</li>\n\t<li>Balkon</li>\n\t<li>25 m2</li>\n\t<li>Su Parkı</li>\n\t<li>Minibar</li>\n\t<li>Dijital Ksa</li>\n\t<li>1 Sofa Bed</li>\n\t<li>2 &Ccedil;ift Kişilik Yatak</li>\n\t<li>Merkezi Klima</li>\n\t<li>1 Kişilik&nbsp;Tek Yatak</li>\n</ul>\n",
+            "room-image-url": "https://erspublic.blob.core.windows.net/test/17d2da94-9931-5166-88c9-961c2d4f4000.jpg",
+            "room-bed-options": null,
+            "room-area": null,
+            "room-level": 5,
+            "room-rules": {
+                "max-adult-capacity": 4,
+                "max-child-capacity": null,
+                "min-child-capacity": null,
+                "max-baby-capacity": null,
+                "max-pax-capacity": 5
+            },
+            "room-has-wifi": true,
+            "room-has-safe": true,
+            "room-has-private-bath": true,
+            "room-has-hairdryer": true,
+            "room-has-balcony": true
+        },
+        {
+            "room-id": 401038,
+            "room-group-id": null,
+            "room-name": "Standart",
+            "room-code": "STD",
+            "room-property": "\nOda maksimum 4 yetişkin kapasitelidir, 4 yetişkin yanında 1 çocuk için  ek yatak sunulmamaktadır. Klima, Emanet kasası, Çalışma masası, Gardırop/Dolap, Kıyafet askılığı, Ahşap/Parke zemin, Tavandan tabana pencereler, Karartma perdeler, Kuran, Seccade, Kıble pusulası, Duş, Saç kurutma makinesi, Terlik, Ücretsiz banyo malzemeleri, Taharet musluğu, Wi-Fi, Düz ekran TV, Uydu kanalları, Telefon, Minibar, Çay/Kahve seti, Elektrikli su ısıtıcı, Dış mekan mobilyaları, Havlular  <br> Oda ve yatak kapasitesi için oda açıklamasını okuyunuz <br>",
+            "room-image-url": "https://erspublic.blob.core.windows.net/test/17e91d39-24ce-467-86fd-c7803ab6a000.jpg",
+            "room-bed-options": "Çift Kişilik Tek Yatak",
+            "room-area": 80,
+            "room-level": 1,
+            "room-rules": {
+                "max-adult-capacity": 3,
+                "max-child-capacity": 1,
+                "min-child-capacity": 0,
+                "max-baby-capacity": 1,
+                "max-pax-capacity": 5
+            },
+            "room-has-wifi": true,
+            "room-has-safe": true,
+            "room-has-private-bath": true,
+            "room-has-hairdryer": true,
+            "room-has-balcony": true
+        },
+        {
+            "room-id": 404388,
+            "room-group-id": null,
+            "room-name": "Garden Superrior",
+            "room-code": "GSA",
+            "room-property": "Oda maksimum 3 yetişkin kapasitelidir, 3 yetişkin yanında 2 çocuk için  ek yatak sunulmamaktadır. Klima, Emanet kasası, Çalışma masası, Gardırop/Dolap, Kıyafet askılığı, Ahşap/Parke zemin, Tavandan tabana pencereler, Karartma perdeler, Kuran, Seccade, Kıble pusulası, Duş, Saç kurutma makinesi, Terlik, Ücretsiz banyo malzemeleri, Taharet musluğu, Wi-Fi, Düz ekran TV, Uydu kanalları, Telefon, Minibar, Çay/Kahve seti, Elektrikli su ısıtıcı, Dış mekan mobilyaları, Havlular  <br> Oda ve yatak kapasitesi için oda açıklamasını okuyunuz <br>",
+            "room-image-url": "https://erspublic.blob.core.windows.net/test/17d75751-c125-5202-8c1e-877c5df84000.jpg",
+            "room-bed-options": null,
+            "room-area": null,
+            "room-level": 3,
+            "room-rules": {
+                "max-adult-capacity": 3,
+                "max-child-capacity": 2,
+                "min-child-capacity": null,
+                "max-baby-capacity": 2,
+                "max-pax-capacity": 5
+            },
+            "room-has-wifi": true,
+            "room-has-safe": true,
+            "room-has-private-bath": false,
+            "room-has-hairdryer": false,
+            "room-has-balcony": true
+        }
+    ],
+    "boardtypes": [
+        {
+            "id": 46820,
+            "name": "Oda Kahvaltı",
+            "code": "BB",
+            "sys-code": "BB",
+            "description": "Oda fiyatının içerisine sadece kahvaltı dahil olup, otel içerisinde yapacağınız diğer tüm harcamalar ekstra olarak fiyatlandırılır"
+        },
+        {
+            "id": 62091,
+            "name": "HB",
+            "code": "HB",
+            "sys-code": "HB",
+            "description": "Oda fiyatının içerisinde kahvaltı ve akşam yemeği dahildir.Kahvaltı ve akşam yemeği dışında yapacağınız tüm harcamalar ekstra ücretle ücretlendirilir"
+        }
+    ],
+    "ratetypes": [
+        {
+            "id": 26769,
+            "code": "Refundable",
+            "pay-now-percent": 25,
+            "min-los": null,
+            "max-los": 365,
+            "cancellation-possible": true,
+            "bookable-before-days": 0,
+            "days-before-arrival": 7,
+            "period-in-days": 3,
+            "payment-information": "Rezervasyonu iptal koşulları ve tarihi dışında iptal ederseniz otel rezervasyonun ödemesinin tamamını alma hakkına sahiptir",
+            "cancel-policy": "Girişe 7 gün kala İptal edilebilir"
+        },
+        {
+            "id": 39735,
+            "code": "Non Refundable",
+            "pay-now-percent": 25,
+            "min-los": null,
+            "max-los": null,
+            "cancellation-possible": false,
+            "bookable-before-days": 2,
+            "days-before-arrival": 6,
+            "period-in-days": null,
+            "payment-information": "In case of cancellation, modification or non-use of the reservation, you will be charged the total amount",
+            "cancel-policy": "Reservation cannot be canceled"
+        }
+    ]
+}

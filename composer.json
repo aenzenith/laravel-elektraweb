@@ -1,0 +1,67 @@
+{
+    "name": "aenzenith/laravel-elektraweb",
+    "description": "Modern, framework-agnostic-minded Laravel SDK for ElektraWeb APIs. Ships the Booking API module (rates, availability, reservations, guest cancellation, definitions, constants) with typed requests and responses. Laravel 9 through 13, PHP 8.1+.",
+    "keywords": ["laravel", "elektraweb", "elektra", "booking", "hotel", "pms", "reservation", "api", "sdk"],
+    "license": "MIT",
+    "homepage": "https://github.com/aenzenith/laravel-elektraweb",
+    "support": {
+        "issues": "https://github.com/aenzenith/laravel-elektraweb/issues",
+        "source": "https://github.com/aenzenith/laravel-elektraweb"
+    },
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mustafa Sarı"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/contracts": "^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9|^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^9.6|^10.5|^11.5|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aenzenith\\ElektraWeb\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aenzenith\\ElektraWeb\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aenzenith\\ElektraWeb\\ElektraWebServiceProvider"
+            ],
+            "aliases": {
+                "ElektraWeb": "Aenzenith\\ElektraWeb\\Facades\\ElektraWeb",
+                "BookingApi": "Aenzenith\\ElektraWeb\\Facades\\BookingApi"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "format": "pint",
+        "analyse": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "policy": {
+            "advisories": {
+                "block": false
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

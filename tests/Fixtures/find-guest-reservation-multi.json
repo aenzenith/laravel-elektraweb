@@ -1,0 +1,17 @@
+{
+    "success": false,
+    "reservation-list": [
+        {
+            "res-no": 40845821,
+            "guest-names": "Selda Temizkan / Şerafettin Bal",
+            "check-in-date": "2023-04-10",
+            "check-out-date": "2023-04-14"
+        },
+        {
+            "res-no": 40845900,
+            "guest-names": "Salim Gürsoy / Nuh Yılmaz",
+            "check-in-date": "2023-04-10",
+            "check-out-date": "2023-04-14"
+        }
+    ]
+}
