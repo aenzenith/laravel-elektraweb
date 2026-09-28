@@ -40,7 +40,7 @@ final class ReservationsTest extends TestCase
             ->withContact(Contact::make('Test', 'TestSurName', 'test@test.com', '+90 (555) 000 00 00'))
             ->withNotes('Test Note')
             ->withVoucherNo('TESTVOUCHERNO')
-            ->withPaymentType(PaymentType::NotPaid)
+            ->withPaymentType(PaymentType::CreditCard)
             ->withTax(TaxDetails::company('ACME Ltd', '1234567890', 'Istanbul', 'Some street 1'));
 
         $created = $this->app->make(BookingApi::class)->hotel()->reservations()->create($reservation);
@@ -151,6 +151,7 @@ final class ReservationsTest extends TestCase
                 ->withOccupancy(2)
                 ->withAgencyCommission(5.0)
                 ->withPromoCode('X')
+                ->withPaymentType(PaymentType::BankTransfer)
         );
 
         $this->assertTrue($result->success);
@@ -159,6 +160,7 @@ final class ReservationsTest extends TestCase
         $this->assertSame(26780, $payload['hotel-id']);
         $this->assertEquals(5.0, $payload['agency-commission']);
         $this->assertSame('X', $payload['promo-code']);
+        $this->assertSame(3, $payload['payment-type']);
     }
 
     public function test_service_reservation_totals_lines_and_pads_extra_questions(): void

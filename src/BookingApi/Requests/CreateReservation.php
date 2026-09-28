@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Aenzenith\ElektraWeb\BookingApi\Requests;
 
 use Aenzenith\ElektraWeb\BookingApi\Data\Offer;
-use Aenzenith\ElektraWeb\BookingApi\Enums\PaymentType;
 use Aenzenith\ElektraWeb\BookingApi\Requests\Concerns\HasReservationDetails;
 use Aenzenith\ElektraWeb\Support\Payload;
 use DateTimeInterface;
@@ -16,9 +15,9 @@ use DateTimeInterface;
  * Typical usage:
  *
  *     CreateReservation::fromOffer($offer, '2026-07-01', '2026-07-05', 'TR')
- *         ->withGuests([Guest::mr('Ada', 'Lovelace'), Guest::child('Bo', 'Lovelace', '2019-03-02')])
- *         ->withContact(Contact::make('Ada', 'Lovelace', 'ada@example.com', '+905551112233'))
- *         ->withPaymentType(PaymentType::NotPaid);
+ *         ->withGuests([Guest::mr('Ahmet', 'Yılmaz'), Guest::child('Elif', 'Yılmaz', '2019-03-02')])
+ *         ->withContact(Contact::make('Ahmet', 'Yılmaz', 'ahmet.yilmaz@ornek.com', '+905321112233'))
+ *         ->withPaymentType(PaymentType::CreditCard);
  */
 final class CreateReservation
 {
@@ -27,8 +26,6 @@ final class CreateReservation
     private ?Contact $contact = null;
 
     private ?string $notes = null;
-
-    private ?PaymentType $paymentType = null;
 
     private ?TaxDetails $tax = null;
 
@@ -66,14 +63,6 @@ final class CreateReservation
         return $copy;
     }
 
-    public function withPaymentType(?PaymentType $paymentType): self
-    {
-        $copy = clone $this;
-        $copy->paymentType = $paymentType;
-
-        return $copy;
-    }
-
     public function withTax(?TaxDetails $tax): self
     {
         $copy = clone $this;
@@ -93,7 +82,6 @@ final class CreateReservation
             $this->tax?->toPayload() ?? [],
             Payload::withoutNulls([
                 'res-notes' => $this->notes,
-                'payment-type' => $this->paymentType?->value,
             ]),
         );
     }

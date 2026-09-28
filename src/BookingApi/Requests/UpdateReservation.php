@@ -12,6 +12,8 @@ use DateTimeInterface;
 
 /**
  * Body for POST /hotel/{id}/updateReservation
+ *
+ * Sending a payment type changes the payment method on the ElektraWeb reservation card.
  */
 final class UpdateReservation
 {

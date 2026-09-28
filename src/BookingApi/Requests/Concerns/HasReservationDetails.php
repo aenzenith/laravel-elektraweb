@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Aenzenith\ElektraWeb\BookingApi\Requests\Concerns;
 
 use Aenzenith\ElektraWeb\BookingApi\Data\Offer;
+use Aenzenith\ElektraWeb\BookingApi\Enums\PaymentType;
 use Aenzenith\ElektraWeb\BookingApi\Exceptions\InvalidRequestException;
 use Aenzenith\ElektraWeb\BookingApi\Requests\Guest;
 use Aenzenith\ElektraWeb\Support\Dates;
@@ -60,6 +61,8 @@ trait HasReservationDetails
     private ?string $voucherNo = null;
 
     private ?float $sellerCommission = null;
+
+    private ?PaymentType $paymentType = null;
 
     /**
      * Copy rate identifiers, price and currency from a search result.
@@ -216,6 +219,22 @@ trait HasReservationDetails
         return $copy;
     }
 
+    /**
+     * Payment method shown on the reservation card; also decides the confirmation e-mail content.
+     */
+    public function withPaymentType(?PaymentType $paymentType): static
+    {
+        $copy = clone $this;
+        $copy->paymentType = $paymentType;
+
+        return $copy;
+    }
+
+    public function paymentType(): ?PaymentType
+    {
+        return $this->paymentType;
+    }
+
     public function withSellerCommission(?float $percent): static
     {
         $copy = clone $this;
@@ -300,6 +319,7 @@ trait HasReservationDetails
             'room-count' => $this->roomCount,
             'voucher-no' => $this->voucherNo,
             'seller-commission' => $this->sellerCommission,
+            'payment-type' => $this->paymentType?->value,
         ]);
     }
 
