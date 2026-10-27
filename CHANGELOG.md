@@ -4,6 +4,13 @@ All notable changes to this package are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and releases are cut
 by release-please from Conventional Commits.
 
+## [1.2.1](https://github.com/aenzenith/laravel-elektraweb/compare/v1.2.0...v1.2.1) (2026-10-27)
+
+
+### Bug Fixes
+
+* en düşük PHP sürümü 8.2'ye yükseltildi ([e54f325](https://github.com/aenzenith/laravel-elektraweb/commit/e54f3259b3a55e20df0261dcedb7846a0e9e3279))
+
 ## [1.2.0](https://github.com/aenzenith/laravel-elektraweb/compare/v1.0.1...v1.2.0) (2026-10-27)
 
 1.1.0 olarak hazırlanan sürüm yayımlanmadı; içeriği bu sürümdedir.
