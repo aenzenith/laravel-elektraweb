@@ -1,6 +1,11 @@
 # Laravel ElektraWeb
 
+[![Packagist Version](https://img.shields.io/packagist/v/aenzenith/laravel-elektraweb)](https://packagist.org/packages/aenzenith/laravel-elektraweb)
+[![Total Downloads](https://img.shields.io/packagist/dt/aenzenith/laravel-elektraweb)](https://packagist.org/packages/aenzenith/laravel-elektraweb/stats)
+[![PHP Version](https://img.shields.io/packagist/dependency-v/aenzenith/laravel-elektraweb/php)](https://packagist.org/packages/aenzenith/laravel-elektraweb)
+[![Laravel](https://img.shields.io/badge/Laravel-9%20%E2%80%93%2013-FF2D20?logo=laravel&logoColor=white)](https://laravel.com)
 [![Tests](https://github.com/aenzenith/laravel-elektraweb/actions/workflows/tests.yml/badge.svg)](https://github.com/aenzenith/laravel-elektraweb/actions/workflows/tests.yml)
+[![License](https://img.shields.io/packagist/l/aenzenith/laravel-elektraweb)](LICENSE)
 
 [ElektraWeb](https://www.elektraweb.com/) API'leri için Laravel istemcisi. Şu an
 [Booking API](https://hotel.docs.bookingapi.elektraweb.com/) modülünü içerir.
