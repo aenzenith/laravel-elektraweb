@@ -48,7 +48,7 @@ final class DefinitionsResource extends HotelResource
     }
 
     /**
-     * GET /hotel/{id}/exchange-rate
+     * GET /hotel/{id}/exchange-rate — one entry per currency, the hotel's local currency at rate 1.
      *
      * @return Collection<int, ExchangeRate>
      */
@@ -56,13 +56,23 @@ final class DefinitionsResource extends HotelResource
     {
         $uri = $this->uri('exchange-rate');
 
-        $rows = $this->cachedArray(
+        $body = $this->cachedArray(
             'exchange_rates',
             $this->cacheKey(),
             fn () => $this->connector->get($uri),
         );
 
-        return (new Collection(array_values(array_filter($rows, 'is_array'))))->map(ExchangeRate::fromArray(...));
+        return new Collection(ExchangeRate::listFrom($body));
+    }
+
+    /**
+     * The rate of one currency, null when the hotel does not publish it.
+     */
+    public function exchangeRate(string $currency): ?ExchangeRate
+    {
+        $currency = strtoupper(trim($currency));
+
+        return $this->exchangeRates()->first(static fn (ExchangeRate $rate): bool => $rate->currency === $currency);
     }
 
     /**

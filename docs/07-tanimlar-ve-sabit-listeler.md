@@ -53,11 +53,26 @@ $params->section('payment');
 
 ## Döviz kurları
 
+`exchange-rate` yanıtı para birimi anahtarlı düz bir nesnedir; otelin yerel para birimi `1` değerini alır:
+
+```json
+{ "rates-date": "2026-10-26T00:00:00.000Z", "EUR": 0.018018, "TRY": 1 }
+```
+
+Paket her para birimini ayrı bir `ExchangeRate` olarak döndürür. `rate`, bir birim yerel paranın o
+para birimindeki karşılığıdır.
+
 ```php
 foreach (BookingApi::hotel()->definitions()->exchangeRates() as $rate) {
-    $rate->currency;
-    $rate->rate;
+    $rate->currency; // "EUR"
+    $rate->rate;     // 0.018018
+    $rate->date;     // "2026-10-26T00:00:00.000Z"
 }
+
+$eur = BookingApi::hotel()->definitions()->exchangeRate('EUR');
+
+$eur?->toLocal(250.00);    // 250 EUR'nun yerel para karşılığı
+$eur?->fromLocal(1000.00); // 1000 birim yerel paranın EUR karşılığı
 ```
 
 ## Ekstra hizmetler
@@ -73,8 +88,8 @@ $services = BookingApi::hotel()->definitions()->extraServices(
 );
 ```
 
-Kurlar ve ekstra hizmetler için dokümanda örnek yanıt bulunmadığından ilgili sınıflar alanları birkaç
-olası adla arar. Tanınmayan alanlara `raw` ile erişilir.
+Ekstra hizmetler için dokümanda örnek yanıt bulunmadığından `ExtraService` alanları birkaç olası adla
+arar. Tanınmayan alanlara `raw` ile erişilir.
 
 ## Sabit listeler
 
