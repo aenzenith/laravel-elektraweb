@@ -4,6 +4,26 @@ All notable changes to this package are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and releases are cut
 by release-please from Conventional Commits.
 
+## [1.1.0](https://github.com/aenzenith/laravel-elektraweb/compare/v1.0.1...v1.1.0) (2026-10-27)
+
+### Features
+
+* **booking:** folyo uçları eklendi ([df1478e](https://github.com/aenzenith/laravel-elektraweb/commit/df1478e))
+  * `hotel()->folio()->addPayment(FolioPayment)`: `POST /hotel/{id}/folio/add-payment`, folyoya tahsilat yazar.
+  * `hotel()->folio()->addRevenue(FolioRevenue)`: `POST /hotel/{id}/folio/add-revenue`, folyoya gelir yazar.
+  * `hotel()->folio()->entries(int ...$reservationIds)`: `GET /hotel/{id}/folio/details`, satırları `FolioEntry` olarak döndürür.
+  * `hotel()->folio()->definitions(int $type)`: `GET /hotel/{id}/folio/definitions`, `folio_definitions` kovasında önbelleğe alınır.
+* **booking:** `definitions()->exchangeRate(string $currency)`, `ExchangeRate::toLocal()` ve `ExchangeRate::fromLocal()` eklendi ([4b04087](https://github.com/aenzenith/laravel-elektraweb/commit/4b04087))
+
+### Bug Fixes
+
+* **booking:** `exchangeRates()` uç yanıtındaki düz nesneyi (`{"rates-date": ..., "EUR": 0.018, "TRY": 1}`) okuyamıyor ve boş koleksiyon döndürüyordu; her para birimi artık ayrı bir `ExchangeRate` olarak döner ([4b04087](https://github.com/aenzenith/laravel-elektraweb/commit/4b04087))
+* **booking:** POST istekleri bağlantı hatası ve 5xx yanıtta tekrar gönderilmiyor. Zaman aşımına uğrayan bir `createReservation` ya da folyo yazımı sağlayıcıda işlenmiş olabileceği için tekrar denemek çift kayıt üretebiliyordu. GET istekleri ve `POST /login` eskisi gibi `http.retry.times` kadar tekrarlanır ([428d37f](https://github.com/aenzenith/laravel-elektraweb/commit/428d37f))
+
+### Documentation
+
+* Folyo sayfası eklendi, sanal POS akışına tahsilat adımı yazıldı ([e0b682a](https://github.com/aenzenith/laravel-elektraweb/commit/e0b682a))
+
 ## [1.0.1](https://github.com/aenzenith/laravel-elektraweb/compare/v1.0.0...v1.0.1) (2026-09-28)
 
 ### Bug Fixes
