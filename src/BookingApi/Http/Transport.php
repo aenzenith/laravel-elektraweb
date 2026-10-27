@@ -17,8 +17,8 @@ use Throwable;
 /**
  * Thin, auth-agnostic wrapper around Laravel's HTTP client.
  *
- * Handles base URL, timeouts and transport retries. Never throws for HTTP
- * error statuses, only for failures to reach the provider at all.
+ * Handles base URL, timeouts and transport retries (GET and login only). Never throws
+ * for HTTP error statuses, only for failures to reach the provider at all.
  */
 final class Transport
 {
@@ -31,13 +31,16 @@ final class Transport
      * @param  array<string, mixed>  $query
      * @param  array<string, string>  $headers
      * @param  array<string, mixed>|null  $json  null sends no body
+     * @param  bool|null  $retry  null retries GET only: a POST that timed out may already have been
+     *                            processed (reservation, folio payment) and must not be sent twice
      *
      * @throws ConnectionFailedException
      */
-    public function send(string $method, string $uri, array $query = [], array $headers = [], ?array $json = null): ApiResponse
+    public function send(string $method, string $uri, array $query = [], array $headers = [], ?array $json = null, ?bool $retry = null): ApiResponse
     {
         $uri = ltrim($uri, '/');
-        $request = $this->pendingRequest()->withHeaders($headers);
+        $retry ??= strtoupper($method) === 'GET';
+        $request = $this->pendingRequest($retry)->withHeaders($headers);
         $options = [];
 
         if ($query !== []) {
@@ -63,7 +66,7 @@ final class Transport
         return new ApiResponse($response);
     }
 
-    private function pendingRequest(): PendingRequest
+    private function pendingRequest(bool $retry): PendingRequest
     {
         $request = $this->http
             ->baseUrl($this->config->baseUrl)
@@ -74,7 +77,7 @@ final class Transport
                 $this->config->httpOptions,
             ));
 
-        if ($this->config->retryTimes > 0) {
+        if ($retry && $this->config->retryTimes > 0) {
             $request = $request->retry(
                 $this->config->retryTimes + 1,
                 $this->config->retrySleepMs,

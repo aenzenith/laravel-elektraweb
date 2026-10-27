@@ -63,6 +63,8 @@ final class Authenticator
             'login',
             headers: $credentials->headers(),
             json: $credentials->payload(),
+            // A repeated login only issues another token.
+            retry: true,
         );
 
         if ($response->failed()) {

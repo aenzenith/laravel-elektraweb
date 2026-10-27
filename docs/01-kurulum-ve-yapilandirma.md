@@ -34,7 +34,7 @@ Yayınlanan dosya `config/elektraweb.php` konumuna kopyalanır.
 | `ELEKTRAWEB_BOOKING_TOKEN_TTL` | `55` | JWT içinde `exp` yoksa kullanılan ömür (dakika) |
 | `ELEKTRAWEB_BOOKING_TIMEOUT` | `30` | İstek zaman aşımı (saniye) |
 | `ELEKTRAWEB_BOOKING_CONNECT_TIMEOUT` | `10` | Bağlantı zaman aşımı (saniye) |
-| `ELEKTRAWEB_BOOKING_RETRY_TIMES` | `2` | Bağlantı hatası ve 5xx için ek deneme sayısı |
+| `ELEKTRAWEB_BOOKING_RETRY_TIMES` | `2` | Bağlantı hatası ve 5xx için ek deneme sayısı (GET ve giriş) |
 | `ELEKTRAWEB_BOOKING_RETRY_SLEEP` | `250` | Denemeler arası bekleme (milisaniye) |
 | `ELEKTRAWEB_BOOKING_CACHE` | `true` | Referans veri önbelleği açık / kapalı |
 | `ELEKTRAWEB_BOOKING_CACHE_STORE` | varsayılan önbellek | Referans verilerin saklandığı depo |

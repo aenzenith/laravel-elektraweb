@@ -18,7 +18,7 @@ Aenzenith\ElektraWeb\Exceptions\ElektraWebException
 | --- | --- |
 | `NotConfiguredException` | Otel kimliği, API anahtarı ya da captcha eksik |
 | `InvalidRequestException` | İstek nesnesi geçersiz; HTTP çağrısı yapılmaz |
-| `ConnectionFailedException` | DNS, TLS ya da zaman aşımı; yeniden denemeler tükendi |
+| `ConnectionFailedException` | DNS, TLS ya da zaman aşımı; GET'te yeniden denemeler tükendi |
 | `RequestFailedException` | 2xx dışı yanıt ya da yazma uçlarında `"success": false` |
 | `AuthenticationException` | `POST /login` reddedildi ya da yanıtta token yok |
 | `InvalidResponseException` | 2xx yanıt beklenen biçimde değil (ör. liste yerine nesne) |
@@ -42,8 +42,15 @@ Sağlayıcı mesajı şu sırayla aranır: `errorDetails` içindeki ilk metin (a
 
 ## Yeniden deneme
 
-Bağlantı hataları ve 5xx yanıtlar `http.retry.times` kadar ek denemeyle tekrarlanır. 4xx yanıtlar
-tekrarlanmaz. `401` yalnız bir kez, yeniden girişten sonra tekrarlanır.
+GET istekleri ve `POST /login`, bağlantı hatası ya da 5xx yanıt aldığında `http.retry.times` kadar ek
+denemeyle tekrarlanır. 4xx yanıtlar tekrarlanmaz.
+
+Diğer POST istekleri (rezervasyon oluşturma, güncelleme, iptal, folyo yazımı) hiç tekrarlanmaz. Zaman
+aşımına uğrayan bir POST sağlayıcıda işlenmiş olabilir; tekrar göndermek çift rezervasyon ya da çift
+tahsilat yazabilir. Bu durumda `ConnectionFailedException` ya da `RequestFailedException` uygulamaya
+ulaşır ve kaydın durumu okuma uçlarıyla kontrol edilir.
+
+`401` yanıtı yöntemden bağımsız olarak bir kez, yeniden girişten sonra tekrarlanır.
 
 ## Olaylar
 
