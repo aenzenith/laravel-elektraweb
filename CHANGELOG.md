@@ -4,6 +4,20 @@ All notable changes to this package are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and releases are cut
 by release-please from Conventional Commits.
 
+## [1.2.0](https://github.com/aenzenith/laravel-elektraweb/compare/v1.1.0...v1.2.0) (2026-10-27)
+
+
+### Features
+
+* **booking:** folyo uçları eklendi ([df1478e](https://github.com/aenzenith/laravel-elektraweb/commit/df1478e76505ba6d291bb8ab5d070170a0487057))
+
+
+### Bug Fixes
+
+* **booking:** exchange-rate yanıtı para birimi başına okundu ([4b04087](https://github.com/aenzenith/laravel-elektraweb/commit/4b040879a33f203c1675a89f6d89d4391a67c373))
+* **booking:** payment-type değerleri ElektraWeb desteğine göre düzeltildi ([76ec3f5](https://github.com/aenzenith/laravel-elektraweb/commit/76ec3f5c1bcfcca881bf889462111b697267573b))
+* **booking:** POST istekleri tekrar gönderilmez oldu ([428d37f](https://github.com/aenzenith/laravel-elektraweb/commit/428d37f09893de794ff95d4b118a32bb02a07bb0))
+
 ## [1.1.0](https://github.com/aenzenith/laravel-elektraweb/compare/v1.0.1...v1.1.0) (2026-10-27)
 
 ### Features
