@@ -81,6 +81,7 @@ return [
                 'exchange_rates' => 60,
                 'extra_services' => 60,
                 'constants' => 60 * 24 * 7,
+                'folio_definitions' => 60 * 6,
             ],
         ],
     ],

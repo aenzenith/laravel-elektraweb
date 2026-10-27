@@ -15,6 +15,7 @@ use Aenzenith\ElektraWeb\BookingApi\Http\Connector;
  *     $hotel->definitions()->all();
  *     $hotel->rates()->search(PriceSearch::make('2026-07-01', '2026-07-05', 2));
  *     $hotel->reservations()->create($reservation);
+ *     $hotel->folio()->addPayment($payment);
  */
 final class HotelScope
 {
@@ -48,5 +49,10 @@ final class HotelScope
     public function guestCancellation(): GuestCancellationResource
     {
         return new GuestCancellationResource($this->connector, $this->cache, $this->config, $this->hotelId);
+    }
+
+    public function folio(): FolioResource
+    {
+        return new FolioResource($this->connector, $this->cache, $this->config, $this->hotelId);
     }
 }
