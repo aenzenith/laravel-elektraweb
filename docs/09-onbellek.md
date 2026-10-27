@@ -1,7 +1,7 @@
 # Önbellek
 
-Seyrek değişen referans veriler Laravel önbelleğinde tutulur. Fiyat, müsaitlik ve tüm yazma
-işlemleri önbelleğe alınmaz.
+Seyrek değişen referans veriler Laravel önbelleğinde tutulur. Fiyat, müsaitlik, folyo satırları ve tüm
+yazma işlemleri önbelleğe alınmaz.
 
 | Kova | Uçlar | Varsayılan süre |
 | --- | --- | --- |
@@ -10,6 +10,7 @@ işlemleri önbelleğe alınmaz.
 | `exchange_rates` | `exchange-rate` | 60 dk |
 | `extra_services` | `service` | 60 dk |
 | `constants` | `countries`, `cities`, `std-board-type` | 7 gün |
+| `folio_definitions` | `folio/definitions` | 360 dk |
 
 Süreler `config/elektraweb.php` içindeki `booking_api.cache.ttl_minutes` altında değiştirilir.
 Bir kovanın süresi `0` yapılırsa o kova önbelleğe alınmaz.

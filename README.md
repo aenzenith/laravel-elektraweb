@@ -6,8 +6,8 @@
 [Booking API](https://hotel.docs.bookingapi.elektraweb.com/) modülünü içerir.
 
 Booking API dokümanındaki tüm uçlar desteklenir: fiyat ve müsaitlik, rezervasyon oluşturma, güncelleme
-ve iptal, ekstra hizmet rezervasyonu, misafirin SMS ile iptali, otel tanımları, B2E listeleri ve sistem
-sabitleri. İstekler Laravel HTTP client üzerinden gider, JWT önbellekte tutulur, referans veriler
+ve iptal, ekstra hizmet rezervasyonu, folyoya tahsilat ve gelir yazımı, misafirin SMS ile iptali, otel
+tanımları, B2E listeleri ve sistem sabitleri. İstekler Laravel HTTP client üzerinden gider, JWT önbellekte tutulur, referans veriler
 sağlayıcı erişilemezken önbellekteki son kopyadan sunulur.
 
 | Gereksinim | Sürüm |
@@ -55,7 +55,8 @@ $reservation->reservationId;
 ```
 
 `payment-type` alanı rezervasyonun ödeme yöntemini belirtir. Değerler ve kendi sanal POS'unuzla ödeme
-alırken izlenecek sıra [Ödeme tipi](docs/05-odeme-tipi.md) sayfasında anlatılır.
+alırken izlenecek sıra [Ödeme tipi](docs/05-odeme-tipi.md) sayfasında anlatılır. Alınan ödeme
+`folio()->addPayment()` ile rezervasyonun folyosuna yazılır ([Folyo](docs/13-folyo.md)).
 
 ## Dokümantasyon
 
@@ -73,6 +74,7 @@ Tam dokümantasyona [`docs/`](docs/README.md) klasöründen ulaşabilirsiniz.
 - [Hatalar ve olaylar](docs/10-hatalar-ve-olaylar.md)
 - [Test](docs/11-test.md)
 - [Düşük seviyeli erişim ve yeni modüller](docs/12-dusuk-seviye-ve-moduller.md)
+- [Folyo](docs/13-folyo.md)
 
 ## Geliştirme
 

@@ -17,14 +17,16 @@ yöntemini değiştirir. `PaymentType::promptsGuestToPay()`, ElektraWeb'in onay 
 
 ## Kendi sanal POS'unuzla ödeme
 
-Booking API'de ön provizyon, ödeme kaydı ya da ödeme durumunu bildiren webhook yoktur. ElektraWeb'in
-kendi rezervasyon motoru önce ödemeyi alır, ödeme başarısızsa rezervasyon oluşturmaz. Kendi POS'unuzu
+Booking API'de ön provizyon ya da ödeme durumunu bildiren webhook yoktur. ElektraWeb'in kendi
+rezervasyon motoru önce ödemeyi alır, ödeme başarısızsa rezervasyon oluşturmaz. Kendi POS'unuzu
 kullanırken aynı sıra önerilir:
 
 1. Kartta ön provizyon alın.
 2. Teklifi yeniden arayın; fiyatın ve müsaitliğin değişmediğini doğrulayın.
 3. `create()` çağrısını `PaymentType::CreditCard` ile yapın.
 4. Rezervasyon oluştuysa provizyonu tahsilata çevirin; oluşmadıysa provizyonu iptal edin.
+5. Çekilen tutarı `folio()->addPayment()` ile rezervasyonun folyosuna tahsilat olarak yazın
+   ([Folyo](13-folyo.md)).
 
 ```php
 $preAuth = $pos->preAuthorize($order);
@@ -48,9 +50,19 @@ try {
 }
 
 $pos->capture($preAuth);
+
+BookingApi::hotel()->folio()->addPayment(FolioPayment::make(
+    reservationId: $reservation->reservationId,
+    departmentId: $creditCardDepartmentId,
+    amount: $order->chargedAmount(),
+    currency: $order->chargedCurrency(),
+    localAmount: $order->chargedAmountInLocalCurrency(),
+));
 ```
 
-`$pos` ve `$order` uygulamanıza aittir; paket yalnız ElektraWeb tarafını yönetir.
+`$pos`, `$order` ve `$creditCardDepartmentId` uygulamanıza aittir; paket yalnız ElektraWeb tarafını
+yönetir. Çekim başarılı olduktan sonra folyo yazımı başarısız olursa ödeme alınmıştır; tahsilatı
+yeniden yazmadan önce folyoyu kontrol edin ([Tekrar gönderim](13-folyo.md#tekrar-gönderim)).
 
 ## Ödemesiz yöntemler
 

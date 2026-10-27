@@ -15,5 +15,6 @@ depo kökündeki [README](../README.md) dosyasına bakın.
 10. [Hatalar ve olaylar](10-hatalar-ve-olaylar.md)
 11. [Test](11-test.md)
 12. [Düşük seviyeli erişim ve yeni modüller](12-dusuk-seviye-ve-moduller.md)
+13. [Folyo](13-folyo.md)
 
 Örneklerdeki otel kimliği, rezervasyon numaraları ve kişi bilgileri temsilîdir.
