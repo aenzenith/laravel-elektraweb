@@ -6,6 +6,6 @@
 4. `composer format` (Pint), `composer analyse` (PHPStan level 8), `composer test`.
 5. Open a pull request with a Conventional Commits title (`feat:`, `fix:`, ...).
 
-Compatibility promise: PHP 8.1+ and Laravel 9 through 13. Do not use language
-features newer than PHP 8.1 (readonly classes, typed constants, `#[\Override]`)
+Compatibility promise: PHP 8.2+ and Laravel 9 through 13. Do not use language
+features newer than PHP 8.2 (typed constants, `#[\Override]`, property hooks)
 or Illuminate APIs that are missing from Laravel 9.

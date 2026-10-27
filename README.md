@@ -17,7 +17,7 @@ sağlayıcı erişilemezken önbellekteki son kopyadan sunulur.
 
 | Gereksinim | Sürüm |
 | --- | --- |
-| PHP | 8.1+ |
+| PHP | 8.2+ |
 | Laravel | 9, 10, 11, 12, 13 |
 
 ## Kurulum
@@ -89,7 +89,7 @@ composer analyse    # PHPStan, seviye 8
 composer format     # Pint
 ```
 
-CI, PHP 8.1–8.5 ve Laravel 9–13 kombinasyonlarını `prefer-lowest` ve `prefer-stable` bağımlılıklarla çalıştırır.
+CI, PHP 8.2–8.5 ve Laravel 9–13 kombinasyonlarını `prefer-lowest` ve `prefer-stable` bağımlılıklarla çalıştırır.
 
 ## Lisans
 

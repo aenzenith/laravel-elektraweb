@@ -4,7 +4,7 @@
 
 | Bileşen | Sürüm |
 | --- | --- |
-| PHP | 8.1 ve üzeri |
+| PHP | 8.2 ve üzeri |
 | Laravel | 9, 10, 11, 12, 13 |
 | guzzlehttp/guzzle | ^7.4 |
 

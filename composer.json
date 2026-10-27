@@ -1,6 +1,6 @@
 {
     "name": "aenzenith/laravel-elektraweb",
-    "description": "Modern, framework-agnostic-minded Laravel SDK for ElektraWeb APIs. Ships the Booking API module (rates, availability, reservations, folio, guest cancellation, definitions, constants) with typed requests and responses. Laravel 9 through 13, PHP 8.1+.",
+    "description": "Modern, framework-agnostic-minded Laravel SDK for ElektraWeb APIs. Ships the Booking API module (rates, availability, reservations, folio, guest cancellation, definitions, constants) with typed requests and responses. Laravel 9 through 13, PHP 8.2+.",
     "keywords": ["laravel", "elektraweb", "elektra", "booking", "hotel", "pms", "reservation", "api", "sdk"],
     "license": "MIT",
     "homepage": "https://github.com/aenzenith/laravel-elektraweb",
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.4",
         "illuminate/contracts": "^9.0|^10.0|^11.0|^12.0|^13.0",
