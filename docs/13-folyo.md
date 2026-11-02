@@ -113,12 +113,29 @@ tahsilat ve indirim satırları eksi, gelir satırları artı tutarla gelir.
 ## Tanımlar
 
 ```php
-$boardTypes = BookingApi::hotel()->folio()->definitions(7);
+$departments = BookingApi::hotel()->folio()->definitions(7);
+$revenues = BookingApi::hotel()->folio()->definitions(8);
 ```
 
-Dokümanda yalnız `7` (pansiyon tipleri) örneklenir. Satır yapısı tipe göre değiştiği için satırlar
-yanıttaki haliyle dizi olarak döner ve `folio_definitions` kovasında 6 saat önbellekte tutulur.
-Tahsilat ve gelir için gereken departman ve gelir kalemi numaraları ElektraWeb'den öğrenilir.
+Canlı API'de (2026-10) `definition-type` değerleri:
+
+| Tip | İçerik | Kimlik sütunu |
+| --- | --- | --- |
+| `1` | Pansiyon tipleri | `BOARDTYPEID` |
+| `2` | Oda tipleri | `ROOMTYPEID` |
+| `3` | Fiyat tipleri | `RATETYPEID` |
+| `4` | Marketler | `MARKETID` |
+| `5` | Segmentler | `SEGMENTID` |
+| `6` | Odalar | `ROOMID` |
+| `7` | Departmanlar | `DEPARTMENTID` |
+| `8` | Gelir kalemleri | `REVENUEID` |
+| `9` | Kaynaklar | `SOURCEID` |
+| `10` | Acenteler | `AGENCYID` |
+
+Satır yapısı tipe göre değiştiği için satırlar yanıttaki haliyle dizi olarak döner ve
+`folio_definitions` kovasında 6 saat önbellekte tutulur. `addPayment()` için `department-id`, tip `7`
+listesindeki ödeme departmanlarından (kredi kartı, sanal POS, nakit, havale) seçilir; `addRevenue()`
+için `revenue-id` tip `8` listesinden gelir. Hangi departmanın kullanılacağına otelin muhasebesi karar verir.
 
 ## Tekrar gönderim
 
